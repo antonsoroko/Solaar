@@ -1,3 +1,9 @@
+# 1.1.12
+
+* Test release2
+* With test script2
+* With test changes2
+
 # 1.1.11
 
 * Test release
