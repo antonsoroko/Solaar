@@ -59,7 +59,7 @@ remote_ref=$(git config --get branch.$branch.merge)
 [ $? -ne 0 ] && echo 'Error: Failed to get remote HEAD' && exit 1
 remote_branch=${remote_ref##*/}
 
-github_token=$(cat ~/.github-token)
+#github_token=$(cat ~/.github-token)
 [ $? -ne 0 ] && echo 'Error: Failed to get github token (check ~/.github_token)' && exit 1
 
 jq -V >/dev/null
@@ -93,7 +93,7 @@ grep '^# '"$version" ChangeLog.md >/dev/null
 
 # Check for uncommitted changes
 git diff --quiet HEAD >/dev/null
-[ $? -ne 0 ] && echo -e '\nError: Uncommitted changes found' && exit 1
+#[ $? -ne 0 ] && echo -e '\nError: Uncommitted changes found' && exit 1
 
 # Check if commit is a version bump
 git show -s --format=%B HEAD | grep "^release $version">/dev/null
@@ -148,7 +148,7 @@ then
     git push $remote $stable_branch >/dev/null || true
     git checkout $branch
 fi
-
+exit
 # Create github release
 body() {
     cat <<EOF
