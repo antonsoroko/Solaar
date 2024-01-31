@@ -1,3 +1,8 @@
+# 1.1.13rc1
+
+* release candidate test 1
+* release candidate test 2
+
 # 1.1.12
 
 * Test release2
